@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Tile from './Tile';
+import { useState } from 'react';
 
 function shuffle(tiles){
   for(let i=tiles.length -1;i>0;i--){
@@ -11,6 +12,11 @@ function shuffle(tiles){
   console.log(tiles);
 }
 function App() {
+  let[noShown,setNoShown]=useState(0);
+  function useState(){
+    setNoShown(setNoShown + 1);
+    console.log('No shown: '+noShown)
+  }
   let objects=['bear','corgi','crab','fish','panda','parrot','pig','rabbit','rhinoceros','shark','snail','turtle'];
   objects=[...objects, ...objects];
   // const array1=[1,4,9,16];
@@ -51,6 +57,7 @@ function App() {
           console.log(object,' in foreach');
           return <div>{object}</div>
         })} */}
+        {/* Shown:{this.} */}
       </div>
     </div>
   )

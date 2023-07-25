@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
 
-function clickedTile(index,setVisible){
+function clickedTile(index,schimbaVizibilitate,functieClick){
     console.log('clicked tile with index'+index);
-    setVisible='visible';
+    schimbaVizibilitate('visible');
+    functieClick();
 }
 
 function Tile(props){
@@ -15,7 +16,7 @@ function Tile(props){
     data-culoare={props.culoare}
     className={visible}
     />
-
+  {/* {props.shown} */}
   </div>
 }
 export default Tile;
